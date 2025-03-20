@@ -6,7 +6,6 @@ class GenerateSessionRequest(BaseModel):
     topic_prompt: str
     character_1: str
     character_2: str
-    pdf: Optional[bytes] = None  # PDF is optional
 
 
 class Dialogue(BaseModel):

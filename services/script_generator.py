@@ -1,9 +1,33 @@
-import random
+from langchain_groq import ChatGroq
+from langchain.prompts import PromptTemplate
+from dotenv import load_dotenv
+
+load_dotenv()
+llm = ChatGroq(model="llama-3.3-70b-versatile")
 
 
-def generate_script(char1: str, char2: str, topic: str):
-    templates = [
-        f"{char1}: Let’s discuss {topic}. {char2}, what do you think?",
-        f"{char2}: Hmm, {topic} is fascinating. Here’s an example...",
-    ]
-    return [{"speaker": char1, "dialogue": random.choice(templates)}]
+def generate_script(character_1: str, character_2: str, topic: str):
+    template = PromptTemplate.from_template(
+        """
+        Write an engaging educational dialogue about "{topic}" between {character_1} and {character_2}.
+        They should talk as if teaching the topic to a third person who is completely new to that topic.
+        Don't include the third person in the dialogue. 
+
+        Return it in a python list[tuple] format like this:
+        [(speaker1, msg), (speaker2, msg),...]
+
+        Keep it interactive, fun, and informative but short.
+    """
+    )
+
+    prompt = template.format(
+        character_1=character_1, character_2=character_2, topic=topic
+    )
+    response = llm.invoke(prompt)
+
+    return eval(response.content)
+
+
+if __name__ == "__main__":
+    res = generate_script("Sherlock Holmes", "Batman", "Newton's Laws of Motion")
+    print(type(res), res[0], res)
