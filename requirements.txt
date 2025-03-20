@@ -1,2 +1,3 @@
 fastapi 
 pypdf
+python-dotenv
