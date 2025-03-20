@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routes import session, pdf, characters
+from routes import session, characters
 
 app = FastAPI(title="Interactive Learning API")
 
