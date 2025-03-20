@@ -1,0 +1,3 @@
+- pdf text extractor
+- tts voice
+- llm: script generation
