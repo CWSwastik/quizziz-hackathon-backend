@@ -1,8 +1,26 @@
 from fastapi import APIRouter
+from models.schemas import Character
 
 router = APIRouter()
 
-characters = ["Sherlock Holmes", "Albert Einstein", "Harry Potter", "Yoda"]
+characters = [
+    Character(
+        name="Hermione",
+        voice_id="Joanna",
+        thinking_photo="https://interactive-learning-api.s3.amazonaws.com/alice_thinking.jpg",
+        teaching_photo="https://interactive-learning-api.s3.amazonaws.com/alice_teaching.jpg",
+        listening_photo="https://interactive-learning-api.s3.amazonaws.com/alice_listening.jpg",
+        scolding_photo="https://interactive-learning-api.s3.amazonaws.com/alice_scolding.jpg",
+    ),
+    Character(
+        name="Sherlock Holmes",
+        voice_id="Matthew",
+        thinking_photo="https://interactive-learning-api.s3.amazonaws.com/bob_thinking.jpg",
+        teaching_photo="https://interactive-learning-api.s3.amazonaws.com/bob_teaching.jpg",
+        listening_photo="https://interactive-learning-api.s3.amazonaws.com/bob_listening.jpg",
+        scolding_photo="https://interactive-learning-api.s3.amazonaws.com/bob_scolding.jpg",
+    ),
+]
 
 
 @router.get("/", response_model=dict)
