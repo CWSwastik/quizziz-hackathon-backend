@@ -10,6 +10,7 @@ class GenerateSessionRequest(BaseModel):
 
 class Dialogue(BaseModel):
     speaker: str
+    pose: str
     dialogue: str
 
 
@@ -34,3 +35,4 @@ class Character(BaseModel):
     thinking_photo: str
     teaching_photo: str
     listening_photo: str
+    scolding_photo: str
