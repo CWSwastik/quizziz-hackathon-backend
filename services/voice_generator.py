@@ -25,7 +25,6 @@ def generate_speech_stream(text: str, voice_id: str = DEFAULT_VOICE_ID):
         "model_id": "eleven_monolingual_v1",
         "voice_settings": {"stability": 0.5, "similarity_boost": 0.5},
     }
-    print(ELEVENLABS_API_KEY)
     response = requests.post(url, json=payload, headers=headers, stream=True)
 
     if response.status_code != 200:
