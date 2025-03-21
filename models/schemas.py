@@ -10,6 +10,7 @@ class GenerateSessionRequest(BaseModel):
 
 class Dialogue(BaseModel):
     speaker: str
+    pose: str
     dialogue: str
 
 
@@ -30,4 +31,12 @@ class SummarizePDFResponse(BaseModel):
 class GenerateVoiceRequest(BaseModel):
     text: str
     character: str
+
+class Character(BaseModel):
+    name: str
+    voice_id: str
+    thinking_photo: str
+    teaching_photo: str
+    listening_photo: str
+    scolding_photo: str
 
