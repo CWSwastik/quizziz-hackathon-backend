@@ -2,6 +2,7 @@ from langchain_groq import ChatGroq
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 
+
 load_dotenv()
 llm = ChatGroq(model="llama-3.3-70b-versatile")
 
@@ -11,11 +12,12 @@ def generate_script(character_1: str, character_2: str, topic: str):
         """
         Write an engaging educational dialogue about "{topic}" between {character_1} and {character_2}.
         They should talk as if teaching the topic to a third person who is completely new to that topic.
-        Don't include the third person in the dialogue. 
+        Don't include the third person in the dialogue. Include emotion from these 4: listening, thinking, teaching, scolding.
 
         Return it in a python list[tuple] format like this:
-        [(speaker1, msg), (speaker2, msg),...]
+        [("speaker1", "emotion", "msg"), ("speaker2", "emotion", "msg"),...]
 
+        Only return a python list no extra text or formatting.
         Keep it interactive, fun, and informative but short.
     """
     )
