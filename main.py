@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from routes import session, characters
 
-app = FastAPI(title="PersonaEd API")
+app = FastAPI(title="Interactive Learning API")
 
 # Include routers
 app.include_router(session.router, prefix="/session", tags=["Session"])
@@ -11,4 +11,4 @@ app.include_router(characters.router, prefix="/characters", tags=["Characters"])
 
 @app.get("/")
 def home():
-    return {"message": "Welcome to the PersonaEd API"}
+    return {"message": "Welcome to the Interactive Learning API"}
