@@ -1,12 +1,18 @@
-from fastapi import APIRouter, UploadFile, File
+from fastapi import APIRouter, UploadFile, File, Query
 from models.schemas import (
     GenerateSessionRequest,
     GenerateSessionResponse,
     Dialogue,
     QuizQuestion,
+    GenerateVoiceRequest,
 )
+from models.schemas import SummarizePDFResponse
+
 from services.script_generator import generate_script
 from services.quiz_generator import generate_quiz
+from services.pdf_parser import extract_text_from_pdf, summarize_text
+from services.voice_generator import generate_speech_stream
+from fastapi.responses import StreamingResponse
 
 router = APIRouter()
 
@@ -33,3 +39,22 @@ async def generate_learning_session(request: GenerateSessionRequest):
         )
 
     return {"script": final_script, "quiz": final_quiz}
+
+
+@router.post("/upload-pdf/", response_model=SummarizePDFResponse)
+async def upload_pdf(file: UploadFile = File(...)):
+    """Endpoint to upload a PDF and return its summarized content."""
+    text = extract_text_from_pdf(file.file)
+    summary = summarize_text(text)
+    return {"summary": summary}
+
+
+@router.get("/generate-voice/")
+async def generate_voice_endpoint(
+    text: str = Query(..., description="Text to convert to speech")
+):
+    """
+    Streams AI-generated speech using ElevenLabs API.
+    """
+    audio_stream = generate_speech_stream(text)
+    return StreamingResponse(audio_stream, media_type="audio/mpeg")
