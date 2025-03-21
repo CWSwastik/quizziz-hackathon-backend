@@ -1,4 +1,4 @@
-from fastapi import APIRouter, UploadFile, File, Query
+from fastapi import APIRouter, HTTPException, UploadFile, File, Query
 from models.schemas import (
     GenerateSessionRequest,
     GenerateSessionResponse,
@@ -13,6 +13,7 @@ from services.quiz_generator import generate_quiz
 from services.pdf_parser import extract_text_from_pdf, summarize_text
 from services.voice_generator import generate_speech_stream
 from fastapi.responses import StreamingResponse
+from .characters import get_character
 
 router = APIRouter()
 
@@ -49,12 +50,14 @@ async def upload_pdf(file: UploadFile = File(...)):
     return {"summary": summary}
 
 
-@router.get("/generate-voice/")
-async def generate_voice_endpoint(
-    text: str = Query(..., description="Text to convert to speech")
-):
+@router.post("/generate-voice/")
+async def generate_voice_endpoint(request: GenerateVoiceRequest):
     """
     Streams AI-generated speech using ElevenLabs API.
     """
-    audio_stream = generate_speech_stream(text)
+    character = get_character(request.character)
+    if not character:
+        raise HTTPException(status_code=404, detail="Character not found")
+
+    audio_stream = generate_speech_stream(request.text, character.voice_id)
     return StreamingResponse(audio_stream, media_type="audio/mpeg")
