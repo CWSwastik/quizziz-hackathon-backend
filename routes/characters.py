@@ -13,8 +13,8 @@ characters = [
         scolding_photo="https://interactive-learning-api.s3.amazonaws.com/alice_scolding.jpg",
     ),
     Character(
-        name="Sherlock Holmes",
-        voice_id="21m00Tcm4TlvDq8ikWAM",
+        name="Harry Potter",
+        voice_id="CwhRBWXzGAHq8TQ4Fs17",
         thinking_photo="https://interactive-learning-api.s3.amazonaws.com/bob_thinking.jpg",
         teaching_photo="https://interactive-learning-api.s3.amazonaws.com/bob_teaching.jpg",
         listening_photo="https://interactive-learning-api.s3.amazonaws.com/bob_listening.jpg",

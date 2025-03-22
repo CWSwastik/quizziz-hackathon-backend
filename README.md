@@ -41,6 +41,7 @@ This backend generates interactive learning scripts and quizzes using LangChain 
 4. Create a `.env` file and add your Groq API key:
    ```sh
    echo "GROQ_API_KEY=your_groq_api_key_here" > .env
+   echo "ELEVENLABS_API_KEY=your_elevenlabs_api_key_here" >> .env
    ```
 
 ### Running the Server
