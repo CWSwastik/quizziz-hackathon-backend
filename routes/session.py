@@ -25,8 +25,10 @@ async def generate_learning_session(request: GenerateSessionRequest):
     )
 
     final_script = []
-    for speaker, pose, msg in script:
-        final_script.append(Dialogue(speaker=speaker, pose=pose, dialogue=msg))
+    for speaker, pose, msg, blackboard in script:
+        final_script.append(
+            Dialogue(speaker=speaker, pose=pose, dialogue=msg, blackboard=blackboard)
+        )
 
     quiz = generate_quiz(request.topic_prompt)
     final_quiz = []

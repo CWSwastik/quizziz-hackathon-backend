@@ -12,6 +12,7 @@ class Dialogue(BaseModel):
     speaker: str
     pose: str
     dialogue: str
+    blackboard: str
 
 
 class QuizQuestion(BaseModel):
@@ -27,10 +28,12 @@ class GenerateSessionResponse(BaseModel):
 
 class SummarizePDFResponse(BaseModel):
     summary: str
-    
+
+
 class GenerateVoiceRequest(BaseModel):
     text: str
     character: str
+
 
 class Character(BaseModel):
     name: str
@@ -39,4 +42,3 @@ class Character(BaseModel):
     teaching_photo: str
     listening_photo: str
     scolding_photo: str
-
