@@ -20,14 +20,26 @@ router = APIRouter()
 
 @router.post("/generate", response_model=GenerateSessionResponse)
 async def generate_learning_session(request: GenerateSessionRequest):
+    char1 = get_character(request.character_1)
+    char2 = get_character(request.character_2)
+
     script = generate_script(
         request.character_1, request.character_2, request.topic_prompt
     )
 
     final_script = []
-    for speaker, pose, msg, blackboard in script:
+    for speaker, msg, blackboard in script:
         final_script.append(
-            Dialogue(speaker=speaker, pose=pose, dialogue=msg, blackboard=blackboard)
+            Dialogue(
+                speaker=speaker,
+                dialogue=msg,
+                blackboard=blackboard,
+                photo_url=(
+                    char1.photo_url
+                    if speaker == request.character_1
+                    else char2.photo_url
+                ),
+            )
         )
 
     quiz = generate_quiz(request.topic_prompt)

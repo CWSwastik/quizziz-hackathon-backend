@@ -10,9 +10,9 @@ class GenerateSessionRequest(BaseModel):
 
 class Dialogue(BaseModel):
     speaker: str
-    pose: str
     dialogue: str
     blackboard: str
+    photo_url: str
 
 
 class QuizQuestion(BaseModel):
@@ -38,7 +38,4 @@ class GenerateVoiceRequest(BaseModel):
 class Character(BaseModel):
     name: str
     voice_id: str
-    thinking_photo: str
-    teaching_photo: str
-    listening_photo: str
-    scolding_photo: str
+    photo_url: str

@@ -12,11 +12,11 @@ def generate_script(character_1: str, character_2: str, topic: str):
         """
         Write an engaging educational dialogue about "{topic}" between {character_1} and {character_2}.
         They should talk as if teaching the topic to a third person who is completely new to that topic.
-        Don't include the third person in the dialogue. Include emotion from these 4: listening, thinking, teaching, scolding.
+        Don't include the third person in the dialogue. 
         Also include a blackboard where they write important points on what they are teaching.
         
         Return it in a python list[tuple] format like this:
-        [("speaker1", "emotion", "msg", "blackboard"), ("speaker2", "emotion", "msg", "blackboard"),...]
+        [("speaker1", "msg", "blackboard"), ("speaker2", "msg", "blackboard"),...]
 
         Only return a python list no extra text or formatting.
         Keep it interactive, fun, and informative but short.
