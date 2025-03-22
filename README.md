@@ -9,12 +9,22 @@ This website let's users select a topic and two fictional characters to learn wi
 - Accept topic prompts and optional PDFs for processing.
 - Uses LangChain and Groq for AI-driven content generation.
 
+## Tech Stack
+
+- _Frontend:_ React with Tailwind CSS
+- _Backend:_ FastAPI, Langchain
+- _AI & LLM:_ Groq (llama-3.3) for text and quiz generation
+- _AI-generated speech (TTS):_ ElevenLabs
+
 ## Setup Instructions
 
 ### Prerequisites
 
 - Python 3.8+
+- Node.js 14+
+- pnpm
 - Groq API Key
+- ElevenLabs API Key
 
 ### Backend Installation
 
