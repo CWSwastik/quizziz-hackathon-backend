@@ -32,9 +32,9 @@ const CallToAction: React.FC = () => {
           }}
         />
       </div>
-      
+
       <div className="container relative z-10 mx-auto px-6">
-        <motion.div 
+        <motion.div
           className="max-w-4xl mx-auto p-8 rounded-2xl bg-background/70 backdrop-blur-md border shadow-lg"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,19 +46,19 @@ const CallToAction: React.FC = () => {
               Ready to Transform Your Learning Experience?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Join thousands of students already using PersonaEd to make learning more 
-              engaging, personalized, and effective.
+              Join thousands of students already using PersonaEd to make
+              learning more engaging, personalized, and effective.
             </p>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild variant="outline">
               <Link to="/chat">
-                Get Started <ArrowRight className="ml-2 h-4 w-4" /> 
+                Get Started <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link to="/demo">Watch Demo</Link>
+              <Link to="/chat">Watch Demo</Link>
             </Button>
           </div>
         </motion.div>

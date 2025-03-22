@@ -46,7 +46,7 @@ const HeroSection: React.FC = () => {
           }}
         />
       </div>
-      
+
       <div className="container relative z-10 mx-auto px-6 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -55,12 +55,13 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-              Learn with <span className="text-primary">Personalized</span> Education
+              Learn with <span className="text-primary">Personalized</span>{" "}
+              Education
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Choose a character tutor and transform the way you learn. 
-              Upload content or enter commands to begin your personalized 
-              educational journey.
+              Choose a character tutor and transform the way you learn. Upload
+              content or enter commands to begin your personalized educational
+              journey.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="gap-2" asChild variant="outline">
@@ -68,12 +69,9 @@ const HeroSection: React.FC = () => {
                   Get Started <ChevronRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline">
-                Learn More
-              </Button>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -82,11 +80,11 @@ const HeroSection: React.FC = () => {
           >
             <div className="relative bg-background/50 backdrop-blur-sm p-6 rounded-xl border shadow-lg">
               <div className="aspect-video relative rounded-lg overflow-hidden shadow-md mb-4 bg-muted flex items-center justify-center">
-              <img 
-                src="/src/assets/image.png"
-                alt="Interactive learning experience"
-                className="w-full h-full object-cover"
-              />
+                <img
+                  src="/src/assets/image.png"
+                  alt="Interactive learning experience"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="flex gap-2 mb-3">
                 {[1, 2, 3, 4].map((i) => (

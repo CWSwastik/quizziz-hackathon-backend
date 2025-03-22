@@ -27,25 +27,31 @@ const NavigationHeader: React.FC = () => {
       <NavigationMenu className="justify-center center">
         <NavigationMenuList>
           <NavigationMenuItem className="flex-col flex items-end justify-center">
-            <Link to="/characters" className={navigationMenuTriggerStyle()}>
+            <Link to="/chat" className={navigationMenuTriggerStyle()}>
               Characters
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem className="flex-col flex items-end justify-center">
-            <Link to="/quiz" className={navigationMenuTriggerStyle()}>
+            <Link to="/chat" className={navigationMenuTriggerStyle()}>
               Quiz
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem className="flex-col flex items-end justify-center">
-            <Link to="/resources" className={navigationMenuTriggerStyle()}>
+            <Link
+              to="https://github.com/CWSwastik/quizziz-hackathon-persona-ed/blob/main/README.md"
+              className={navigationMenuTriggerStyle()}
+            >
               Resources
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link to="/about" className={navigationMenuTriggerStyle()}>
+            <Link
+              to="https://github.com/CWSwastik/quizziz-hackathon-persona-ed/blob/main/README.md"
+              className={navigationMenuTriggerStyle()}
+            >
               About
             </Link>
           </NavigationMenuItem>
