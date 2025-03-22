@@ -1,6 +1,6 @@
-# PersonaEd Backend
+# PersonaEd
 
-This backend generates interactive learning scripts and quizzes using LangChain and Groq. Users select a topic and two fictional characters to learn with, and the API generates an educational conversation and quiz.
+This website let's users select a topic and two fictional characters to learn with, and it generates an educational conversation and quiz based on it.
 
 ## Features
 
@@ -16,7 +16,7 @@ This backend generates interactive learning scripts and quizzes using LangChain 
 - Python 3.8+
 - Groq API Key
 
-### Installation
+### Backend Installation
 
 1. Clone the repository:
 
@@ -53,3 +53,29 @@ fastapi run main.py
 ```
 
 The API will be available at `http://127.0.0.1:8000` and docs at `http://127.0.0.1:8000/docs`.
+
+### Frontend Setup
+
+1. cd into the `frontend` directory:
+
+   ```sh
+   cd frontend
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   pnpm install
+   ```
+
+3. Start the development server:
+
+   ```sh
+   pnpm run dev
+   ```
+
+The frontend will be available at `http://localhost:5173`.
+
+## Note
+
+For the submission the frontend was moved into this repository. The original repository for the frontend can be found [here](https://github.com/Pegasus47/PersonaEd)
