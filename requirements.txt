@@ -3,3 +3,4 @@ pypdf
 python-dotenv
 langchain
 langchain-groq
+python-multipart
