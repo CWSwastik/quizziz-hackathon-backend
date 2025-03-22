@@ -1,13 +1,17 @@
-# PersonaEd
+# PersonaEd: AI-Driven Educational Dialogues and Quizzes
 
-This website let's users select a topic and two fictional characters to learn with, and it generates an educational conversation and quiz based on it.
+## Overview
+
+PersonaEd is an interactive learning platform that makes education personalized and engaging by using fan-favorite characters like Avengers, Harry Potter, and more to explain concepts. Designed for students aged 5-15, the platform offers text-based explanations along with AI-generated character voices to enhance the learning experience. This is followed by a personalized quiz based on the study material or the topic submitted. This helps engage students and make learning feel personal.
 
 ## Features
 
-- Generate educational dialogues between two characters.
-- Generate multiple-choice quizzes based on the selected topic.
-- Accept topic prompts and optional PDFs for processing.
-- Uses LangChain and Groq for AI-driven content generation.
+- _Character-Based Learning:_ Users can choose their favorite fictional characters as learning mentors.
+- _Text & Speech Support:_ Lessons are displayed as text and narrated in the character's voice.
+- _Personalized Learning:_ Difficulty levels adjust dynamically based on user interaction.
+- _Interactive Quiz Generation:_ Users can take quizzes generated dynamically tailored to the selected study material.
+- _Custom Content Uploads:_ Users can upload their own study materials for personalized explanations.
+- _Gamification Elements:_ Encourages engagement through an immersive and interactive UI.
 
 ## Tech Stack
 
@@ -89,3 +93,32 @@ The frontend will be available at `http://localhost:5173`.
 ## Note
 
 For the submission the frontend was moved into this repository. The original repository for the frontend can be found [here](https://github.com/Pegasus47/PersonaEd)
+
+## API Endpoints
+
+| Endpoint        | Method | Description                                 |
+| --------------- | ------ | ------------------------------------------- |
+| /generate       | POST   | Generates a script and quiz from user input |
+| /upload-pdf     | POST   | Parses and extracts text from PDFs          |
+| /generate-voice | POST   | Converts text into character voice          |
+
+## Usage and Workflow
+
+1. _Landing page:_ To welcome users and introduce concepts. Includes a character selection button and leads to the chat.
+2. _Character selection:_ To allow students to choose their learning mentor. The user sees a grid of character cards.
+3. _Chat page:_ An option to upload the PDF or send a prompt through the text box.
+4. _Explanation page:_ The chosen character explains the given concept. Also contains an option to go to quiz.
+5. _Quiz page:_ Contains the questions derived from the study material.
+
+## Future Enhancements
+
+- Tracking progress of the student and enhancing the future sessions in accordance to the user's learning curve.
+- Adding study breaks and options for study techniques like Pomodoro.
+- Expansion of gamification elements to boost engagement.
+
+## Contributors
+
+1. Swastik Goswami (2023A7PS0043H)
+2. Kriti Saluja (2022B5A70698H)
+3. Arpit Kudre (2023A7PS0158H)
+4. Neha Bhagwat (2023A7PS0067H)
