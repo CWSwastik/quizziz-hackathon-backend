@@ -8,12 +8,12 @@ llm = ChatGroq(model="llama-3.3-70b-versatile")
 
 def generate_quiz(topic: str):
     prompt = f"""
-    Create a multiple-choice quiz with 3 questions about {topic}.
-    Each question should have 3 options and 1 correct answer.
+    Create a multiple-choice quiz with 10 questions about {topic}.
+    Each question should have 4 options and 1 correct answer.
     Format it as python dictionary like this dont use any md just python dict: 
     {{
       "quiz": [
-        {{"question": "...", "options": ["...", "...", "..."], "correct_answer": "..."}}
+        {{"question": "...", "options": ["...", "...", "...", "..."], "correct_answer": "..."}}
       ]
     }}
     """

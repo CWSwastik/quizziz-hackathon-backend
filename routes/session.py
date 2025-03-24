@@ -18,7 +18,7 @@ from .characters import get_character
 router = APIRouter()
 
 
-@router.post("/generate", response_model=GenerateSessionResponse)
+@router.post("/generate/", response_model=GenerateSessionResponse)
 async def generate_learning_session(request: GenerateSessionRequest):
     char1 = get_character(request.character_1)
     char2 = get_character(request.character_2)
